@@ -1,6 +1,10 @@
 import tkinter as tk
 from tkinter import *
 from tkinter import ttk
+# Import Function
+from cypher_model import *
+from enigma import *
+from playfair import *
 
 root = tk.Tk()
 
@@ -16,20 +20,14 @@ def openNewWindowVigChip():
         print(INPUT)
         KUNCI = inputkunci.get("1.0", "end-1c")
         print(KUNCI)
-        # @Dito NANTI PANGGIL FUNGSI DI SINI
-        # INPUT sama KUNCI tinggal dipake kek variabel biasa
-        # Cara nulisnya gini
-        # Output.insert(END, hasil enkripsi)
+        Output.insert(END, str(vigEncode(INPUT, KUNCI)))
         
     def ShowPlainteks():
         INPUT = inputtxt.get("1.0", "end-1c")
         print(INPUT)
         KUNCI = inputkunci.get("1.0", "end-1c")
         print(KUNCI)
-        # @Dito NANTI PANGGIL FUNGSI DI SINI
-        # INPUT sama KUNCI tinggal dipake kek variabel biasa
-        # Cara nulisnya gini
-        # Output.insert(END, hasil dekripsi)
+        Output.insert(END, str(vigDecode(INPUT, KUNCI)))
 
     #Close Button
     def Close():
@@ -62,20 +60,14 @@ def openNewWindowExt():
             print(INPUT)
             KUNCI = inputkunci.get("1.0", "end-1c")
             print(KUNCI)
-            # @Dito NANTI PANGGIL FUNGSI DI SINI
-            # INPUT sama KUNCI tinggal dipake kek variabel biasa
-            # Cara nulisnya gini
-            # Output.insert(END, hasil enkripsi)
+            Output.insert(END, str(vigASCIIEncode(INPUT, KUNCI)))
 
     def ShowPlainteks():
         INPUT = inputtxt.get("1.0", "end-1c")
         print(INPUT)
         KUNCI = inputkunci.get("1.0", "end-1c")
         print(KUNCI)
-        # @Dito NANTI PANGGIL FUNGSI DI SINI
-        # INPUT sama KUNCI tinggal dipake kek variabel biasa
-        # Cara nulisnya gini
-        # Output.insert(END, hasil dekripsi)        
+        Output.insert(END, str(vigASCIIDecode(INPUT, KUNCI)))        
     
     #Close Button
     def Close():
@@ -108,20 +100,14 @@ def openNewWindowPlayfair():
             print(INPUT)
             KUNCI = inputkunci.get("1.0", "end-1c")
             print(KUNCI)
-            # @Dito NANTI PANGGIL FUNGSI DI SINI
-            # INPUT sama KUNCI tinggal dipake kek variabel biasa
-            # Cara nulisnya gini
-            # Output.insert(END, hasil enkripsi)
+            Output.insert(END, str(encrypt(INPUT, generateKeyMatrix(KUNCI))))
 
     def ShowPlainteks():
         INPUT = inputtxt.get("1.0", "end-1c")
         print(INPUT)
         KUNCI = inputkunci.get("1.0", "end-1c")
         print(KUNCI)
-        # @Dito NANTI PANGGIL FUNGSI DI SINI
-        # INPUT sama KUNCI tinggal dipake kek variabel biasa
-        # Cara nulisnya gini
-        # Output.insert(END, hasil dekripsi)        
+        Output.insert(END, str(decrypt(INPUT, generateKeyMatrix(KUNCI))))
 
     #Close Button
     def Close():

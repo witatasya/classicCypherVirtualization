@@ -66,15 +66,3 @@ def vigASCIIDecode(CypherText, Key):
         
         plainText.append(chr(x))
     return("" . join(plainText))
-
-dummyText   = "gw sptnya drop kriptografi"
-textFile    = open('dummyTextFile.txt', 'r')
-binaryFile  = open('dummyBinary.jpg', 'rb')
-teks        = textFile.read()
-picture     = binaryFile.read()
-dummyKey    = "kriptokoding"
-dummyText   = dummyText.replace(" ", "")
-# cypherText  = vigEncode(teks, dummyKey)
-# print(cypherText)
-# print(vigDecode(cypherText,dummyKey))
-print(picture)
